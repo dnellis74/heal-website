@@ -10,12 +10,28 @@ markdown: kramdown
 # Site settings
 title: H.E.A.L. Coaching
 email: healsalida@gmail.com
-phone: 7192394500
+phone: "7192394500"
 description: >
   H.E.A.L. Coaching: A non-traditional approach to personal development.
   Humor can heal. Everyone is expert of their own experience. Attachment styles can be changed. Laughter and crying spring from the same well.
 url: "https://dnellis74.github.io"
 baseurl: "/heal-website"
+
+# H.E.A.L. page content (from requirements/data.txt)
+heal:
+  bio: "Jennifer Dempsey has a BS in Behavioral Science, an NVQ II in Youth Work and is a certified Integrated Attachment Theory coach."
+  tagline: "A non-traditional approach to personal development."
+  beliefs_intro: "At H.E.A.L. we believe that"
+  beliefs:
+    - letter: "H"
+      text: "Humor can heal"
+    - letter: "E"
+      text: "Everyone is expert of their own experience"
+    - letter: "A"
+      text: "Attachment styles can be changed"
+    - letter: "L"
+      text: "Laughter and crying spring from the same well"
+  services: "coaching for individuals, couples, youth, adults"
 
 # Social links
 social:

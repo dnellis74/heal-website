@@ -3,42 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site.title }} - Coaching</title>
+    <title>{{ site.title }}</title>
     {% seo %}
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
     <link rel="canonical" href="{{ page.url | relative_url | replace:'/index.html','/' }}">
 </head>
-<body class="business-card-page">
-    <div class="card-container">
-        <!-- Front card -->
-        <div class="card-frame">
-            <div class="card card--front">
-                <h1 class="card__title">H.E.A.L.</h1>
-                <p class="card__tagline">A non-traditional approach to personal development</p>
-            </div>
-            <p class="card-frame__label">Front</p>
-        </div>
+<body class="heal-page">
+    <main class="heal-main">
+        <!-- Hero: gradient + H.E.A.L. + tagline + bio -->
+        <header class="heal-hero">
+            <h1 class="heal-hero__title">H.E.A.L.</h1>
+            <p class="heal-hero__tagline">{{ site.heal.tagline }}</p>
+            <p class="heal-hero__bio">{{ site.heal.bio }}</p>
+        </header>
 
-        <!-- Back card -->
-        <div class="card-frame">
-            <div class="card card--back">
-                <div class="card--back__left">
-                    <ul class="card__beliefs">
-                        <li class="card__belief-intro">At H.E.A.L., we believe that</li>
-                        <li>1. Trauma can heal</li>
-                        <li>2. Everyone is a part of their own experience</li>
-                        <li>3. Attachment styles can be changed</li>
-                        <li>4. Laughter and crying spring from the same well</li>
-                    </ul>
-                </div>
-                <div class="card--back__right">
-                    <p class="card__services-line">creative counselling for both children</p>
-                    <p class="card__services-line">complex youth, adults</p>
-                    <p class="card__services-line">reconnect to a good you. The real you.</p>
-                </div>
+        <!-- Beliefs + services section (card-like two-column layout) -->
+        <section class="heal-content">
+            <div class="heal-content__left">
+                <p class="heal-content__intro">{{ site.heal.beliefs_intro }}</p>
+                <ul class="heal-beliefs">
+                    {% for b in site.heal.beliefs %}
+                    <li><strong>{{ b.letter }}</strong> – {{ b.text }}</li>
+                    {% endfor %}
+                </ul>
             </div>
-            <p class="card-frame__label">Back</p>
-        </div>
-    </div>
+            <div class="heal-content__right">
+                <p class="heal-services">{{ site.heal.services }}</p>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <footer class="heal-contact">
+            <a href="mailto:{{ site.email }}" class="heal-contact__link">{{ site.email }}</a>
+            <a href="tel:{{ site.phone }}" class="heal-contact__link">{{ site.phone }}</a>
+            <a href="{{ site.url }}{{ site.baseurl }}/" class="heal-contact__link" target="_blank" rel="noopener">Website</a>
+        </footer>
+    </main>
 </body>
 </html>

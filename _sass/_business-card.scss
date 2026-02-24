@@ -1,67 +1,37 @@
-// Business Card – Front & Back to match design
+// H.E.A.L. page – visually similar to card design, single web page
 
-// Design tokens from reference
 $card-pink: #d4567a;
 $card-orange: #e9a05a;
 $card-maroon: #7c2d32;
 $card-text-dark: #2d3748;
 $card-frame-bg: #e5e7eb;
-$card-frame-border: #2563eb;
 $card-inner-border: #fff;
 
-.business-card-page {
-    background: $card-frame-bg;
-    min-height: 100vh;
+.heal-page {
     margin: 0;
+    min-height: 100vh;
+    font-family: $font-family-base;
+    background: $card-frame-bg;
+}
+
+.heal-main {
+    max-width: 720px;
+    margin: 0 auto;
     padding: $spacing-unit * 2;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: $font-family-base;
-}
-
-.card-container {
-    width: 100%;
-    max-width: 560px;
-    display: flex;
     flex-direction: column;
-    gap: $spacing-unit * 2.5;
+    gap: 0;
 }
 
-.card-frame {
-    background: $card-frame-bg;
-    border: 2px solid $card-frame-border;
-    padding: $spacing-unit * 1.5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: $spacing-unit;
-
-    &__label {
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: $card-text-dark;
-        margin: 0;
-        text-align: center;
-    }
-}
-
-// Shared inner card (white border, rounded optional)
-.card {
-    border: 1px solid $card-inner-border;
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 480px;
-}
-
-// —— Front card ——
-.card--front {
+// —— Hero (gradient like front of card) ——
+.heal-hero {
     background: linear-gradient(90deg, $card-pink 0%, $card-orange 100%);
-    padding: $spacing-unit * 2.5 $spacing-unit * 2;
+    padding: $spacing-unit * 3 $spacing-unit * 2;
     position: relative;
     overflow: hidden;
+    border: 1px solid $card-inner-border;
+    box-sizing: border-box;
 
-    // Subtle texture overlay (light speckles)
     &::after {
         content: "";
         position: absolute;
@@ -72,46 +42,84 @@ $card-inner-border: #fff;
         pointer-events: none;
     }
 
-    .card__title {
-        font-size: 2.25rem;
+    &__title {
+        font-size: 2.5rem;
         font-weight: 700;
         color: $card-maroon;
-        margin: 0 0 $spacing-unit * 0.5 0;
+        margin: 0 0 $spacing-unit 0;
         position: relative;
         z-index: 1;
-        font-family: $font-family-base;
     }
 
-    .card__tagline {
-        font-size: 0.95rem;
+    &__tagline {
+        font-size: 1.1rem;
         font-style: italic;
         color: $card-text-dark;
-        margin: 0;
-        margin-left: $spacing-unit * 0.5;
+        margin: 0 0 $spacing-unit * 1.25 0;
         position: relative;
         z-index: 1;
+    }
+
+    &__bio {
+        font-size: 0.95rem;
+        color: $card-text-dark;
+        margin: 0;
+        position: relative;
+        z-index: 1;
+        line-height: 1.5;
     }
 }
 
-// —— Back card ——
-.card--back {
+// —— Content: beliefs (left) + services (right on gradient) ——
+.heal-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    min-height: 200px;
+    min-height: 220px;
+    border: 1px solid $card-inner-border;
+    border-top: none;
+    box-sizing: border-box;
 
     @media (max-width: $medium) {
         grid-template-columns: 1fr;
     }
 }
 
-.card--back__left {
+.heal-content__left {
     background: #fff;
-    padding: $spacing-unit * 1.5 $spacing-unit * 1.25;
+    padding: $spacing-unit * 1.5 $spacing-unit * 1.5;
     border-right: 1px solid rgba(0, 0, 0, 0.06);
+
+    @media (max-width: $medium) {
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
 }
 
-.card--back__right {
-    padding: $spacing-unit * 1.5 $spacing-unit * 1.25;
+.heal-content__intro {
+    font-size: 0.9rem;
+    color: $card-text-dark;
+    margin: 0 0 $spacing-unit * 0.75 0;
+}
+
+.heal-beliefs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.9rem;
+    color: $card-text-dark;
+    line-height: 1.6;
+
+    li {
+        margin-bottom: 0.4rem;
+
+        strong {
+            color: $card-maroon;
+        }
+    }
+}
+
+.heal-content__right {
+    padding: $spacing-unit * 1.5;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -120,7 +128,6 @@ $card-inner-border: #fff;
     position: relative;
     overflow: hidden;
 
-    // Triangular gradient shape (pink top-right to orange bottom-right) with subtle texture
     &::before {
         content: "";
         position: absolute;
@@ -144,34 +151,35 @@ $card-inner-border: #fff;
     }
 }
 
-.card__beliefs {
-    list-style: disc;
+.heal-services {
+    font-size: 0.95rem;
+    color: $card-text-dark;
     margin: 0;
-    padding-left: 1.25rem;
-    font-size: 0.875rem;
-    color: $card-text-dark;
-    line-height: 1.6;
-
-    li {
-        margin-bottom: 0.35rem;
-
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
-}
-
-.card__belief-intro {
-    list-style: none;
-    padding-left: 0;
-    margin-left: -1.25rem;
-    margin-bottom: 0.5rem;
-}
-
-.card__services-line {
-    font-size: 0.875rem;
-    color: $card-text-dark;
-    margin: 0.2rem 0;
     position: relative;
     z-index: 1;
+    font-style: italic;
+}
+
+// —— Contact footer ——
+.heal-contact {
+    padding: $spacing-unit * 2 $spacing-unit;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-unit * 1.5;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid $card-inner-border;
+    border-top: none;
+    box-sizing: border-box;
+
+    &__link {
+        color: $card-maroon;
+        font-weight: 500;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
