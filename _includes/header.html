@@ -1,0 +1,21 @@
+<header class="header">
+    <nav class="nav">
+        <div class="nav__container">
+            <a href="{{ '/' | relative_url }}" class="nav__brand">
+                {{ site.title }}
+            </a>
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="{{ '/' | relative_url }}" class="nav__link">Home</a>
+                </li>
+                {% for page in site.pages %}
+                    {% if page.title and page.nav-order %}
+                        <li class="nav__item">
+                            <a href="{{ page.url | relative_url }}" class="nav__link">{{ page.title }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </nav>
+</header>

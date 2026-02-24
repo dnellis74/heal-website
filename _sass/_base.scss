@@ -1,0 +1,104 @@
+// Reset and base styles
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: $base-font-size;
+    scroll-behavior: smooth;
+}
+
+body {
+    font: $base-line-height $font-family-base;
+    color: $color-text;
+    background-color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+    display: block;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: ($spacing-unit * 0.5);
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+p {
+    margin-bottom: $spacing-unit;
+}
+
+a {
+    color: $color-primary;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: $color-secondary;
+        text-decoration: underline;
+    }
+}
+
+code {
+    font-family: $font-family-mono;
+    font-size: 0.9em;
+    background-color: $color-background;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+}
+
+pre {
+    background-color: $color-background;
+    padding: $spacing-unit;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin-bottom: $spacing-unit;
+
+    code {
+        background-color: transparent;
+        padding: 0;
+    }
+}
+
+blockquote {
+    border-left: 4px solid $color-primary;
+    padding-left: $spacing-unit;
+    margin-bottom: $spacing-unit;
+    color: $color-text-light;
+    font-style: italic;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}

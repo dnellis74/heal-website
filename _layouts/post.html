@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<article class="post">
+    <header class="post__header">
+        <h1 class="post__title">{{ page.title }}</h1>
+        <time class="post__date" datetime="{{ page.date | date_to_xmlschema }}">
+            {{ page.date | date: "%B %d, %Y" }}
+        </time>
+        {% if page.categories.size > 0 %}
+            <div class="post__categories">
+                {% for category in page.categories %}
+                    <a href="{{ '/categories/' | relative_url }}#{{ category }}" class="post__category">{{ category }}</a>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </header>
+    <div class="post__content">
+        {{ content }}
+    </div>
+</article>

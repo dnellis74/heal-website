@@ -1,0 +1,172 @@
+// Layout utilities
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-unit;
+
+    @media (min-width: $large) {
+        padding: 0 ($spacing-unit * 2);
+    }
+}
+
+// Header styles
+.header {
+    background-color: #fff;
+    border-bottom: 1px solid $color-border;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav {
+    padding: $spacing-unit 0;
+
+    &__container {
+        @extend .container;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__brand {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $color-text;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &__list {
+        list-style: none;
+        display: flex;
+        gap: $spacing-unit;
+    }
+
+    &__item {
+        display: inline-block;
+    }
+
+    &__link {
+        color: $color-text;
+        font-weight: 500;
+
+        &:hover {
+            color: $color-primary;
+            text-decoration: none;
+        }
+    }
+}
+
+// Footer styles
+.footer {
+    background-color: $color-background;
+    border-top: 1px solid $color-border;
+    margin-top: ($spacing-unit * 4);
+    padding: ($spacing-unit * 2) 0;
+
+    &__container {
+        @extend .container;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: $spacing-unit;
+
+        @media (max-width: $medium) {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    &__content {
+        flex: 1;
+        color: $color-text-light;
+    }
+
+    &__social {
+        display: flex;
+        gap: $spacing-unit;
+        flex-wrap: wrap;
+
+        @media (max-width: $medium) {
+            justify-content: center;
+        }
+    }
+
+    &__link {
+        color: $color-primary;
+
+        &:hover {
+            color: $color-secondary;
+        }
+    }
+}
+
+// Page styles
+.page {
+    @extend .container;
+    padding: ($spacing-unit * 3) $spacing-unit;
+
+    &__title {
+        margin-bottom: ($spacing-unit * 2);
+    }
+
+    &__content {
+        line-height: $base-line-height;
+
+        > p {
+            max-width: 65ch;
+        }
+    }
+}
+
+// Post styles
+.post {
+    @extend .container;
+    padding: ($spacing-unit * 3) $spacing-unit;
+    max-width: 65ch;
+
+    &__header {
+        margin-bottom: ($spacing-unit * 2);
+    }
+
+    &__title {
+        margin-bottom: $spacing-unit;
+    }
+
+    &__date {
+        color: $color-text-light;
+        font-size: 0.9rem;
+    }
+
+    &__categories {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+    }
+
+    &__category {
+        display: inline-block;
+        background-color: $color-background;
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        color: $color-primary;
+
+        &:hover {
+            background-color: $color-primary;
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+
+    &__content {
+        line-height: $base-line-height;
+
+        > p {
+            margin-bottom: $spacing-unit;
+        }
+    }
+}

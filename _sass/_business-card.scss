@@ -1,0 +1,165 @@
+// Business Card Specific Styles
+
+.business-card-page {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-unit;
+    margin: 0;
+}
+
+.card-container {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: $spacing-unit * 2;
+    padding: $spacing-unit * 3;
+    
+    @media (max-width: $medium) {
+        grid-template-columns: 1fr;
+        gap: $spacing-unit * 1.5;
+        padding: $spacing-unit * 2;
+    }
+
+    &__section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &--left {
+            border-right: 3px solid $color-primary;
+            padding-right: $spacing-unit * 2;
+
+            @media (max-width: $medium) {
+                border-right: none;
+                border-bottom: 3px solid $color-primary;
+                padding-right: 0;
+                padding-bottom: $spacing-unit * 1.5;
+            }
+        }
+
+        &--center {
+            text-align: center;
+            padding: 0 $spacing-unit;
+        }
+
+        &--right {
+            border-left: 3px solid $color-primary;
+            padding-left: $spacing-unit * 2;
+
+            @media (max-width: $medium) {
+                border-left: none;
+                border-top: 3px solid $color-primary;
+                padding-left: 0;
+                padding-top: $spacing-unit * 1.5;
+            }
+        }
+    }
+
+    &__name {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: $color-primary;
+        margin-bottom: $spacing-unit * 0.5;
+        line-height: 1.2;
+    }
+
+    &__credentials {
+        font-size: 0.9rem;
+        color: $color-text-light;
+        line-height: 1.6;
+        
+        em {
+            display: block;
+            color: $color-primary;
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+    }
+
+    &__tagline {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: $color-text;
+        margin-bottom: $spacing-unit;
+        line-height: 1.3;
+    }
+
+    &__philosophy {
+        background: $color-background;
+        padding: $spacing-unit * 1.5;
+        border-radius: 8px;
+        margin-bottom: $spacing-unit;
+    }
+
+    &__belief {
+        font-size: 0.95rem;
+        margin-bottom: 0.75rem;
+        color: $color-text;
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        strong {
+            color: $color-primary;
+            font-weight: 700;
+        }
+    }
+
+    &__services {
+        font-size: 0.9rem;
+        color: $color-text-light;
+        font-style: italic;
+    }
+
+    &__contact {
+        text-align: left;
+
+        @media (max-width: $medium) {
+            text-align: center;
+        }
+    }
+
+    &__contact-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: $color-primary;
+        margin-bottom: $spacing-unit;
+    }
+
+    &__contact-item {
+        margin-bottom: $spacing-unit;
+    }
+
+    &__label {
+        display: block;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: $color-text-light;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 0.25rem;
+    }
+
+    &__link {
+        display: block;
+        color: $color-primary;
+        font-weight: 500;
+        word-break: break-all;
+        
+        &:hover {
+            color: $color-secondary;
+            text-decoration: underline;
+        }
+    }
+}

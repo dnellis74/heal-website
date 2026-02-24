@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }} - Coaching</title>
+    {% seo %}
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <link rel="canonical" href="{{ page.url | relative_url | replace:'/index.html','/' }}">
+</head>
+<body class="business-card-page">
+    <div class="card-container">
+        <div class="card">
+            <!-- Left Section: Name & Credentials -->
+            <div class="card__section card__section--left">
+                <h1 class="card__name">Jennifer Dempsey</h1>
+                <p class="card__credentials">
+                    BS in Behavioral Science<br>
+                    NVQ II in Youth Work<br>
+                    <em>Certified Integrated Attachment Theory Coach</em>
+                </p>
+            </div>
+
+            <!-- Center Section: Philosophy -->
+            <div class="card__section card__section--center">
+                <h2 class="card__tagline">A non-traditional<br>approach to personal development.</h2>
+                
+                <div class="card__philosophy">
+                    <p class="card__belief"><strong>H</strong> - Humor can heal</p>
+                    <p class="card__belief"><strong>E</strong> - Everyone is expert of their own experience</p>
+                    <p class="card__belief"><strong>A</strong> - Attachment styles can be changed</p>
+                    <p class="card__belief"><strong>L</strong> - Laughter and crying spring from the same well</p>
+                </div>
+
+                <p class="card__services">
+                    <em>Coaching for individuals, couples, youth, adults</em>
+                </p>
+            </div>
+
+            <!-- Right Section: Contact -->
+            <div class="card__section card__section--right">
+                <div class="card__contact">
+                    <h3 class="card__contact-title">Get In Touch</h3>
+                    <div class="card__contact-item">
+                        <span class="card__label">Email</span>
+                        <a href="mailto:{{ site.email }}" class="card__link">
+                            {{ site.email }}
+                        </a>
+                    </div>
+                    <div class="card__contact-item">
+                        <span class="card__label">Phone</span>
+                        <a href="tel:{{ site.phone }}" class="card__link">
+                            {{ site.phone }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
