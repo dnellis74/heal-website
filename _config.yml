@@ -1,5 +1,6 @@
 # Build settings
 plugins:
+  - jekyll-sass-converter
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
