@@ -10,51 +10,34 @@
 </head>
 <body class="business-card-page">
     <div class="card-container">
-        <div class="card">
-            <!-- Left Section: Name & Credentials -->
-            <div class="card__section card__section--left">
-                <h1 class="card__name">Jennifer Dempsey</h1>
-                <p class="card__credentials">
-                    BS in Behavioral Science<br>
-                    NVQ II in Youth Work<br>
-                    <em>Certified Integrated Attachment Theory Coach</em>
-                </p>
+        <!-- Front card -->
+        <div class="card-frame">
+            <div class="card card--front">
+                <h1 class="card__title">H.E.A.L.</h1>
+                <p class="card__tagline">A non-traditional approach to personal development</p>
             </div>
+            <p class="card-frame__label">Front</p>
+        </div>
 
-            <!-- Center Section: Philosophy -->
-            <div class="card__section card__section--center">
-                <h2 class="card__tagline">A non-traditional<br>approach to personal development.</h2>
-                
-                <div class="card__philosophy">
-                    <p class="card__belief"><strong>H</strong> - Humor can heal</p>
-                    <p class="card__belief"><strong>E</strong> - Everyone is expert of their own experience</p>
-                    <p class="card__belief"><strong>A</strong> - Attachment styles can be changed</p>
-                    <p class="card__belief"><strong>L</strong> - Laughter and crying spring from the same well</p>
+        <!-- Back card -->
+        <div class="card-frame">
+            <div class="card card--back">
+                <div class="card--back__left">
+                    <ul class="card__beliefs">
+                        <li class="card__belief-intro">At H.E.A.L., we believe that</li>
+                        <li>1. Trauma can heal</li>
+                        <li>2. Everyone is a part of their own experience</li>
+                        <li>3. Attachment styles can be changed</li>
+                        <li>4. Laughter and crying spring from the same well</li>
+                    </ul>
                 </div>
-
-                <p class="card__services">
-                    <em>Coaching for individuals, couples, youth, adults</em>
-                </p>
-            </div>
-
-            <!-- Right Section: Contact -->
-            <div class="card__section card__section--right">
-                <div class="card__contact">
-                    <h3 class="card__contact-title">Get In Touch</h3>
-                    <div class="card__contact-item">
-                        <span class="card__label">Email</span>
-                        <a href="mailto:{{ site.email }}" class="card__link">
-                            {{ site.email }}
-                        </a>
-                    </div>
-                    <div class="card__contact-item">
-                        <span class="card__label">Phone</span>
-                        <a href="tel:{{ site.phone }}" class="card__link">
-                            {{ site.phone }}
-                        </a>
-                    </div>
+                <div class="card--back__right">
+                    <p class="card__services-line">creative counselling for both children</p>
+                    <p class="card__services-line">complex youth, adults</p>
+                    <p class="card__services-line">reconnect to a good you. The real you.</p>
                 </div>
             </div>
+            <p class="card-frame__label">Back</p>
         </div>
     </div>
 </body>
